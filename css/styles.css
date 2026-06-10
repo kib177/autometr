@@ -79,9 +79,9 @@ body {
 
 /* Шапка */
 header {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.8);
     border-bottom: 2px solid #ecf0f1;
-    padding: 8px 0;
+    padding: 4px 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -92,7 +92,7 @@ header .container {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 10px;
 }
 
 nav ul {
