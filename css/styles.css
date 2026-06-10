@@ -79,7 +79,7 @@ body {
 
 /* Шапка */
 header {
-    background: white;
+    background: rgba(255, 255, 255, 0.85);
     border-bottom: 2px solid #ecf0f1;
     padding: 12px 0;
     position: sticky;
