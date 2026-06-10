@@ -536,24 +536,32 @@ footer p {
 
 /* Планшеты и маленькие ноутбуки (до 768px) */
 @media (max-width: 768px) {
+    header {
+        height: 70px; /* Изначальная высота шапки на телефонах */
+    }
+    .logo-img {
+        height: 50px; /* Изначальный размер логотипа на телефонах */
+    }
+    .logo-main {
+        font-size: 1.2rem;
+    }
+    .logo-sub {
+        font-size: 0.7rem;
+    }
+    
+    /* Состояние при скролле на мобильном */
+    header.scrolled {
+        height: 50px;
+    }
+    header.scrolled .logo-img {
+        height: 35px;
+    }
     .container {
         padding: 0 20px;
     }
 
     .logo {
         justify-content: center;
-    }
-
-    .logo-img {
-        height: 70px;
-    }
-
-    .logo-main {
-        font-size: 1.4rem;
-    }
-
-    .logo-sub {
-        font-size: 0.7rem;
     }
 
     nav ul {
