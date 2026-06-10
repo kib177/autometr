@@ -81,7 +81,7 @@ body {
 header {
     background: rgba(255, 255, 255, 0.9);
     border-bottom: 2px solid #ecf0f1;
-    padding: 0;
+    padding: 5px 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -124,7 +124,7 @@ nav a:hover {
 
 .header-phone a {
     text-decoration: none;
-    color: #2c3e50;
+    color: #407cb8;
     font-weight: 600;
     font-size: 1.2rem;
     display: flex;
