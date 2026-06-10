@@ -30,15 +30,8 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    gap: 15px;
-    opacity: 1;
-    transform: scale(1);
-    transform-origin: left center;
-    transition: opacity 0.25s ease, transform 0.25s ease, max-width 0.25s ease;
-    max-width: 400px;
+    gap: 0px;
 }
-
-
 
 .logo-link {
     line-height: 0;
@@ -48,9 +41,7 @@ body {
     height: 90px;
     width: auto;
     display: block;
-    transition: height 0.3s ease;
 }
-
 
 .logo-text {
     display: flex;
@@ -88,13 +79,12 @@ body {
 
 /* Шапка */
 header {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.5);
     border-bottom: 2px solid #ecf0f1;
-    height: 98px;
+    padding: 8px 0;
     position: sticky;
     top: 0;
     z-index: 100;
-    transition: height 0.3s ease, background-color 0.3s ease;
 }
 
 header .container {
@@ -102,17 +92,7 @@ header .container {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 5px;
-    height: 100%;
-}
-
-header.scrolled-hide-logo .logo {
-    opacity: 0;
-    transform: scale(0.8);
-    max-width: 0; /* Контент плавно ужимается в ширину, не ломая высоту */
-    pointer-events: none;
-    margin-right: 0;
-    gap: 0;
+    gap: 15px;
 }
 
 nav ul {
@@ -536,32 +516,24 @@ footer p {
 
 /* Планшеты и маленькие ноутбуки (до 768px) */
 @media (max-width: 768px) {
-    header {
-        height: 70px; /* Изначальная высота шапки на телефонах */
-    }
-    .logo-img {
-        height: 50px; /* Изначальный размер логотипа на телефонах */
-    }
-    .logo-main {
-        font-size: 1.2rem;
-    }
-    .logo-sub {
-        font-size: 0.7rem;
-    }
-    
-    /* Состояние при скролле на мобильном */
-    header.scrolled {
-        height: 50px;
-    }
-    header.scrolled .logo-img {
-        height: 35px;
-    }
     .container {
         padding: 0 20px;
     }
 
     .logo {
         justify-content: center;
+    }
+
+    .logo-img {
+        height: 70px;
+    }
+
+    .logo-main {
+        font-size: 1.4rem;
+    }
+
+    .logo-sub {
+        font-size: 0.7rem;
     }
 
     nav ul {
