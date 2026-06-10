@@ -30,7 +30,7 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    gap: 0px;
+    gap: 15px;
 }
 
 .logo-link {
@@ -79,7 +79,7 @@ body {
 
 /* Шапка */
 header {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     border-bottom: 2px solid #ecf0f1;
     padding: 4px 0;
     position: sticky;
@@ -92,7 +92,7 @@ header .container {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 5px;
 }
 
 nav ul {
