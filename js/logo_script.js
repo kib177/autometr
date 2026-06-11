@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const header = document.querySelector('header');
+    
     const logo = document.querySelector('.logo');
     if (!header || !logo) return;
 
@@ -12,15 +12,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateHeader() {
         const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-        const shouldShrink = isMobile() && scrollY > 50;
+        const shouldShrink = isMobile() && scrollY > 5;
 
         if (shouldShrink === lastShrink) return;
-
+        
         if (shouldShrink) {
-            header.classList.add('shrink');
             logo.classList.add('hide-on-scroll');
         } else {
-            header.classList.remove('shrink');
             logo.classList.remove('hide-on-scroll');
         }
         lastShrink = shouldShrink;
@@ -37,10 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, { passive: true });
 
     window.addEventListener('resize', function() {
-        // При ресайзе сразу обновляем без троттлинга
         updateHeader();
     });
-
-    // Первичная установка
     updateHeader();
 });
