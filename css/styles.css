@@ -28,8 +28,9 @@ body {
 
 /* Логотип в шапке — общий контейнер */
 .logo {
-    overflow: hidden;  
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+   overflow: hidden;
+    max-height: 120px;          
+    transition: max-height 0.3s ease, opacity 0.3s ease, margin 0.3s ease, padding 0.3s ease;
 }
 
 .logo-link {
@@ -64,8 +65,10 @@ body {
 }
 
 .logo.hide-on-scroll {
+   max-height: 0;
     opacity: 0;
-    visibility: hidden;
+    margin: 0;
+    padding: 0;
     pointer-events: none;
 }
 
@@ -526,6 +529,9 @@ footer p {
 
 /* Планшеты и маленькие ноутбуки (до 768px) */
 @media (max-width: 768px) {
+    body {
+        padding-top: var(--header-height, 120px);
+    }
     .container {
         padding: 0 20px;
     }
@@ -661,6 +667,14 @@ footer p {
     .footer-logo {
         height: 70px;
     } 
+     header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.95); /* немного прозрачности, если нужно */
+    }
     header.shrink {
         padding: 2px 0;
         transition: padding 0.2s ease;
@@ -791,6 +805,13 @@ footer p {
     .review-img {
         padding: 0px;
         margin: 0px ;
+    }
+
+    header {
+        position: fixed;
+    }
+    body {
+        padding-top: var(--header-height, 100px);
     }
 
 
