@@ -3,30 +3,33 @@ document.addEventListener('DOMContentLoaded', function() {
         return window.innerWidth <= 768;
     }
 
+    const header = document.querySelector('header');
     const logo = document.querySelector('.logo');
-    if (!logo) return;
+    if (!header || !logo) return;
 
-    let lastState = false;   // true – логотип скрыт
+    let lastState = false;   // true – шапка сжата
     let ticking = false;
 
-    function updateLogoState(forceHide) {
-        const shouldHide = forceHide && isMobile();
-        if (shouldHide === lastState) return; // состояние не изменилось
+    function updateHeaderState(forceShrink) {
+        const shouldShrink = forceShrink && isMobile();
+        if (shouldShrink === lastState) return;
 
-        if (shouldHide) {
+        if (shouldShrink) {
+            header.classList.add('shrink');
             logo.classList.add('hide-on-scroll');
         } else {
+            header.classList.remove('shrink');
             logo.classList.remove('hide-on-scroll');
         }
-        lastState = shouldHide;
+        lastState = shouldShrink;
     }
 
     function onScroll() {
         if (!ticking) {
             requestAnimationFrame(function() {
                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                const shouldHide = scrollTop > 50;   // порог прокрутки
-                updateLogoState(shouldHide);
+                const shouldShrink = scrollTop > 50;   // порог прокрутки
+                updateHeaderState(shouldShrink);
                 ticking = false;
             });
             ticking = true;
@@ -36,17 +39,17 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', onScroll);
     window.addEventListener('resize', function() {
         if (!isMobile()) {
-            updateLogoState(false);
+            updateHeaderState(false);
         } else {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            updateLogoState(scrollTop > 50);
+            updateHeaderState(scrollTop > 50);
         }
     });
 
-    // Инициализация
+    // Инициализация при загрузке
     if (isMobile() && (window.pageYOffset || document.documentElement.scrollTop) > 50) {
-        updateLogoState(true);
+        updateHeaderState(true);
     } else {
-        updateLogoState(false);
+        updateHeaderState(false);
     }
 });
