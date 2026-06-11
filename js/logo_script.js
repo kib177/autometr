@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!ticking) {
             requestAnimationFrame(function() {
                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                const shouldShrink = scrollTop > 5;   // порог прокрутки
+                const shouldShrink = scrollTop > 1;   // порог прокрутки
                 updateHeaderState(shouldShrink);
                 ticking = false;
             });
@@ -42,12 +42,12 @@ document.addEventListener('DOMContentLoaded', function() {
             updateHeaderState(false);
         } else {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            updateHeaderState(scrollTop > 5);
+            updateHeaderState(scrollTop > 1);
         }
     });
 
     // Инициализация при загрузке
-    if (isMobile() && (window.pageYOffset || document.documentElement.scrollTop) > 5) {
+    if (isMobile() && (window.pageYOffset || document.documentElement.scrollTop) > 1) {
         updateHeaderState(true);
     } else {
         updateHeaderState(false);
