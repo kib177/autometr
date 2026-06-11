@@ -1,18 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
-    function isMobile() {
-        return window.innerWidth <= 768;
-    }
-
     const header = document.querySelector('header');
     const logo = document.querySelector('.logo');
     if (!header || !logo) return;
 
-    let lastState = false;   // true – шапка сжата
+    function isMobile() {
+        return window.innerWidth <= 768;
+    }
+
+    let lastShrink = false;
     let ticking = false;
 
-    function updateHeaderState(forceShrink) {
-        const shouldShrink = forceShrink && isMobile();
-        if (shouldShrink === lastState) return;
+    function updateHeader() {
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        const shouldShrink = isMobile() && scrollY > 50;
+
+        if (shouldShrink === lastShrink) return;
 
         if (shouldShrink) {
             header.classList.add('shrink');
@@ -21,35 +23,24 @@ document.addEventListener('DOMContentLoaded', function() {
             header.classList.remove('shrink');
             logo.classList.remove('hide-on-scroll');
         }
-        lastState = shouldShrink;
+        lastShrink = shouldShrink;
     }
 
-    function onScroll() {
+    window.addEventListener('scroll', function() {
         if (!ticking) {
             requestAnimationFrame(function() {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                const shouldShrink = scrollTop > 1;   // порог прокрутки
-                updateHeaderState(shouldShrink);
+                updateHeader();
                 ticking = false;
             });
             ticking = true;
         }
-    }
+    }, { passive: true });
 
-    window.addEventListener('scroll', onScroll);
     window.addEventListener('resize', function() {
-        if (!isMobile()) {
-            updateHeaderState(false);
-        } else {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            updateHeaderState(scrollTop > 1);
-        }
+        // При ресайзе сразу обновляем без троттлинга
+        updateHeader();
     });
 
-    // Инициализация при загрузке
-    if (isMobile() && (window.pageYOffset || document.documentElement.scrollTop) > 1) {
-        updateHeaderState(true);
-    } else {
-        updateHeaderState(false);
-    }
+    // Первичная установка
+    updateHeader();
 });
