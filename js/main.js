@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         nav.classList.toggle('active');
     });
 
-    // Закрытие меню при клике на ссылку (опционально)
+    // Закрываем меню при клике на любую ссылку внутри него
     nav.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             burger.classList.remove('active');
