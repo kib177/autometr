@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-eval' https://api-maps.yandex.ru; style-src 'self' 'unsafe-inline';">
+    <meta http-equiv="Content-Security-Policy" content="
+    script-src 'self' 'unsafe-eval' https://api-maps.yandex.ru https://yastatic.net;
+    style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+    font-src 'self' https://cdnjs.cloudflare.com;
+    img-src 'self' data:;">
     <title>АвтоМэтр - Автосервис в Гатово</title>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=87431c0a-9c1e-45c7-9b14-5e656d1ea165&lang=ru_RU" type="text/javascript"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
