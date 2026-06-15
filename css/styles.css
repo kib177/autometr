@@ -581,13 +581,14 @@ footer p {
         justify-content: center;
     }
     .burger-menu {
-        display: flex;               /* показываем бургер */
+        display: flex;  
+        order: 1;
     }
      /* Скрываем обычную навигацию */
     nav#main-nav {
         display: none;
         position: absolute;
-        top: 80px;                   /* высота шапки */
+        top: 80px;                        
         left: 0;
         width: 100%;
         background: rgba(255, 255, 255, 0.98);
@@ -719,9 +720,9 @@ footer p {
     } 
     
     header .container {
-        flex-direction: column;
-        text-align: center;
-        gap: 5px;
+        justify-content: space-between;   
+        flex-wrap: nowrap;
+        padding: 0 10px;
     }
 }
 
