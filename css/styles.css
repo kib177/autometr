@@ -558,7 +558,7 @@ footer p {
     }
 
     .logo-img {
-        height: 50px;
+        height: 65px;
         flex-shrink: 0;
     }
 
@@ -782,7 +782,7 @@ footer p {
         gap: 8px;
     }
     .logo-img {
-        height: 50px;           
+        height: 65px;           
     }
     .logo-main {
         font-size: 1.2rem;     
