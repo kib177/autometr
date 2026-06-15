@@ -64,12 +64,6 @@ body {
     text-transform: uppercase;
 }
 
-.logo.hide-on-scroll {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-}
-
 /* Логотип в подвале */
 .footer-logo {
     height: 100px;
@@ -151,6 +145,11 @@ nav a:hover {
 
 header.shrink {
     padding: 2px 0; 
+}
+
+header.shrink .logo-img {
+    height: 50px;            
+    transition: height 0.3s ease;
 }
 
 /* Главный баннер */
