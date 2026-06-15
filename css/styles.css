@@ -31,7 +31,7 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+    transition: none;
 }
 
 .logo-link {
@@ -43,12 +43,18 @@ body {
     height: 90px;
     width: auto;
     display: block;
+    height: 90px;
+    transition: transform 0.3s ease-out;   
+    will-change: transform;
 }
 
 .logo-text {
     display: flex;
     flex-direction: column;
     white-space: nowrap;
+    transition: opacity 0.3s ease-out, max-height 0.3s ease-out;
+    overflow: hidden;
+    max-height: 80px;
 }
 
 .logo-main {
@@ -97,6 +103,16 @@ header .container {
     align-items: center;
     flex-wrap: wrap;
     gap: 5px;
+}
+
+header.scrolled .logo-img {
+    transform: scale(0.7);         
+}
+
+header.scrolled .logo-text {
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
 }
 
 nav ul {
