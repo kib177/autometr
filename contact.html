@@ -19,31 +19,38 @@
    
    <header>
     <div class="container">
+        <!-- Иконка телефона для мобильных (скрыта на десктопе) -->
+        <a href="tel:+375339131430" class="mobile-phone-icon" aria-label="Позвонить">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+
+        <!-- Логотип -->
         <div class="logo">
             <a href="index.html" class="logo-link">
                 <img src="images/Logo.png" alt="АвтоМэтр" class="logo-img">
             </a>
             <div class="logo-text">
                 <div class="logo-main">АВТОМЭТР</div>
-                <div class="logo-sub">ПРОФЕССИОНАЛЬНЫЙ СЕРВИС</div>
+                <div class="logo-sub">ПРОФЕССИОНАЛЬНЫЙ АВТОСЕРВИС</div>
             </div>
         </div>
 
+        <!-- Кнопка бургер-меню (видна только на мобильных) -->
         <button class="burger-menu" aria-label="Открыть меню">
             <span></span>
             <span></span>
             <span></span>
         </button>
 
+        <!-- Навигация и контакты для мобильных внутри бургера -->
         <nav id="main-nav">
             <ul>
-                <li><a href="index.html">Главная</a></li>       
-                <li><a href="services.html">Услуги и цены</a></li> 
-                <li><a href="legal_entities.html">Юридическим лицам</a></li>      
-                <li><a href="about.html">О нас</a></li>        
-                <li><a href="contact.html">Контакты</a></li>    
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="services.html">Услуги и цены</a></li>
+                <li><a href="legal_entities.html">Юридическим лицам</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="contact.html">Контакты</a></li>
             </ul>
-            <!-- Контакты, показываемые только в бургер-меню на мобильных -->
             <div class="mobile-contacts">
                 <a href="tel:+375339131430" class="mobile-phone">
                     <i class="fas fa-phone-alt"></i> +375 33 913-14-30
@@ -53,12 +60,16 @@
                 </div>
             </div>
         </nav>
-        <div class="header-phone">
-            <a href="tel:+375339131430">
+
+        <!-- Контакты для десктопа (скрыты на мобильных) -->
+        <div class="header-contacts">
+            <a href="tel:+375339131430" class="header-phone">
                 <i class="fas fa-phone-alt"></i> +375 33 913-14-30
             </a>
+            <div class="header-address">
+                <i class="fas fa-map-marker-alt"></i> аг. Гатово, ул. Фрунзе, 8
+            </div>
         </div>
-
     </div>
 </header>
 
