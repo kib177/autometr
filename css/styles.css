@@ -41,17 +41,13 @@ body {
     height: 90px;
     width: auto;
     display: block;
-    transition: transform 0.3s ease-out;   
-    will-change: transform;
+    transition: none;
 }
 
 .logo-text {
     display: flex;
     flex-direction: column;
     white-space: nowrap;
-    transition: opacity 0.3s ease-out, max-height 0.3s ease-out;
-    overflow: hidden;
-    max-height: 80px;
 }
 
 .logo-main {
@@ -103,15 +99,6 @@ header .container {
     align-items: center;
     flex-wrap: wrap;
     gap: 5px;
-}
-
-header.scrolled .logo-img {
-    transform: scale(0.7);         
-}
-
-header.scrolled .logo-text {
-    opacity: 0;
-    max-height: 0;
 }
 
 nav ul {
