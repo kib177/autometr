@@ -549,11 +549,10 @@ footer p {
     .logo {
         display: flex;
         align-items: center;
-        gap: 8px;
-        margin-bottom: 4px;        /* отступ до телефона */
-        max-width: 100%;           /* гарантия, что не вылезет */
+        gap: 8px;   
+        max-width: 100%;           
         box-sizing: border-box;
-        padding: 0 40px;           /* освобождаем место для бургера справа */
+        padding: 0 40px;           
     }
 
     .logo-img {
