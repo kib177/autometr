@@ -60,7 +60,7 @@ header {
     background: rgba(255, 255, 255, 0.95);
     border-bottom: 2px solid #ecf0f1;
     min-height: 80px;
-    padding: 5px 0;
+    padding: 0px 0;
     box-sizing: border-box;
     transition: none;
 }
